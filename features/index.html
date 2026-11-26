@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="查看 NASFileM 的存储、连接、访问控制、备份、媒体库及存储端维护功能。">
+  <title>全部功能 · NASFileM</title>
+  <link rel="icon" href="../assets/brand/favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/brand/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+<header class="site-header"><div class="shell header-inner">
+  <a class="wordmark" href="../" aria-label="NASFileM 首页"><img src="../assets/brand/logo-96.png" alt="" width="32" height="32">NASFileM</a>
+  <nav aria-label="主导航"><a href="./" aria-current="page">全部功能</a><a href="../#clients">平台支持</a><a href="../guide/">使用指南</a></nav>
+  <a class="button small outline" href="../download/">下载</a>
+</div></header>
+<main class="shell catalog" id="main">
+  <div class="page-heading">
+    <h1>全部功能</h1>
+    <p>从共享一个目录，到管理多台存储设备。具体功能取决于存储端、访问端和系统版本。</p>
+    <nav class="page-index" aria-label="功能目录">
+      <a href="#storage">存储与文件</a><a href="#connection">连接与协议</a><a href="#permissions">共享与权限</a><a href="#data">备份与恢复</a><a href="#media">媒体与阅读</a><a href="#maintenance">存储端维护</a>
+    </nav>
+  </div>
+  <section id="storage">
+    <h2>存储与文件</h2>
+    <ul>
+      <li><strong>存储设备。</strong>Android 和 Mac 可选定目录并开启共享。访问端可保留多台已配对的存储设备，并切换当前目录和上传目标。</li>
+      <li><strong>文件浏览。</strong>列表、媒体网格、缩略图、排序、收藏与最近访问。可搜索当前目录，兼容版本还可搜索有权限的子目录。</li>
+      <li><strong>文件管理。</strong>上传、下载、新建目录、重命名、移动、删除和批量操作。标签、备注和批量改名工具的可用性取决于版本。</li>
+      <li><strong>导入本机文件。</strong>发现已授权目录里的视频、照片、音乐、漫画、书籍、文档和归档，核对后加入上传队列。</li>
+    </ul>
+  </section>
+  <section id="connection">
+    <h2>连接与协议</h2>
+    <ul>
+      <li><strong>局域网 HTTPS。</strong>在同一网络配对和访问。Mac 支持 Wi-Fi 和有线连接，并可在地址变化后重新发现。</li>
+      <li><strong>跨网访问。</strong>兼容的存储端和客户端可通过 Iroh 尝试直连，必要时使用中继。文件页与传输任务会显示连接方式。</li>
+      <li><strong>进阶组网。</strong>兼容配置下可使用 WebRTC、自部署信令、Tailscale 或 ZeroTier 等现有组网，并查看链路延迟和吞吐。</li>
+      <li><strong>开放协议。</strong>在存储端启用网页门户或 WebDAV。支持的客户端可在浏览器浏览和传输文件，也可用文件管理器挂载。OPDS 阅读器可连接兼容的书库。</li>
+    </ul>
+  </section>
+  <section id="permissions">
+    <h2>共享与权限</h2>
+    <ul>
+      <li><strong>设备配对。</strong>扫码或复制配对码，在存储端核对并批准。可逐台撤销，也可停止整个目录的共享。</li>
+      <li><strong>目录及成员授权。</strong>共享目录默认只读，可为指定设备或家庭成员分配目录及读写权限。</li>
+      <li><strong>访客分享。</strong>支持版本可生成带有效期和提取码的临时外链。兼容场景还支持下载次数限制、二维码及访客上传。</li>
+      <li><strong>私密内容。</strong>私人书库和私密媒体目录可设单独的设备访问权限。锁定和系统验证方式随平台而异。</li>
+    </ul>
+  </section>
+  <section id="data">
+    <h2>传输、备份与恢复</h2>
+    <ul>
+      <li><strong>大文件上传。</strong>持久上传队列、分片校验、暂停与续传、完整文件 SHA-256 校验。两端兼容时支持 4 GiB 以上文件，实际大小取决于剩余空间和文件系统。</li>
+      <li><strong>相册备份。</strong>手动选图备份，兼容版本可配置定时备份。照片按内容去重，并保存在选定的写入位置。</li>
+      <li><strong>误删恢复。</strong>回收站支持找回到原路径，带快照的版本可恢复。兼容版本可配置配额和存储端通知。</li>
+      <li><strong>外部备份。</strong>支持 S3、rclone HTTPS WebDAV 和已授权的可移除卷。切换设备时可迁移配置，目录权限须在新设备上重新授权。</li>
+    </ul>
+  </section>
+  <section id="media">
+    <h2>媒体与阅读</h2>
+    <ul>
+      <li><strong>电影与剧集。</strong>在原目录串流播放，支持 NFO、本地海报、元数据匹配、观看进度与连续播放。兼容版本提供 DLNA、离线缓存和 Android 低码流预生成。</li>
+      <li><strong>相册。</strong>时间轴、网格、幻灯片、EXIF 信息和筛选。支持的客户端还可发现相似照片，或查看设备本地的人物与宠物分组。</li>
+      <li><strong>音乐、有声书与播客。</strong>专辑聚合、队列、LRC 歌词、倍速、书签、睡眠定时和 RSS 播客。</li>
+      <li><strong>漫画。</strong>CBZ、ZIP 和图片目录阅读，含双页、方向、护眼滤镜和进度。兼容设备可导入授权的漫画导出目录。</li>
+      <li><strong>电子书与文档。</strong>EPUB、TXT、Markdown、CSV、PDF。支持的格式可显示目录、搜索正文及保存阅读进度。</li>
+      <li><strong>电视端。</strong>Android TV 和 Apple TV 在同一局域网获准后，可浏览、播放和续播授权媒体。</li>
+    </ul>
+  </section>
+  <section id="maintenance">
+    <h2>存储端维护</h2>
+    <ul>
+      <li><strong>运行状态。</strong>查看后台服务、系统资源、热状态及挂载卷。存储分析可查看文件分布、大文件和重复候选。</li>
+      <li><strong>Android 电池保护。</strong>兼容设备可使用系统限充、Shizuku、Root 控充或已有的 ACC，也可接入 Home Assistant 与 ESPHome 智能插座。旁路供电和控充能力取决于设备。</li>
+      <li><strong>Docker 实验室。</strong>在兼容的 Android Root 或 MagicDesk Shroot 环境接入现有 Docker Engine，查看容器、端口与日志，并管理 Compose 项目。</li>
+      <li><strong>后台与外观。</strong>Android 提供后台诊断与 OLED 值守屏。Mac 可从菜单栏管理共享，并在登录后恢复后台服务。兼容客户端提供简体中文、繁体中文和英文。</li>
+    </ul>
+  </section>
+</main>
+<footer class="site-footer"><div class="shell footer-inner">
+  <a class="wordmark" href="../" aria-label="NASFileM 首页"><img src="../assets/brand/logo-96.png" width="32" height="32" alt="">NASFileM</a>
+  <nav aria-label="页脚导航"><a href="../download/">下载</a><a href="../guide/">使用指南</a><a href="../support/">支持</a><a href="../privacy/">隐私说明</a></nav>
+</div></footer>
+</body>
+</html>

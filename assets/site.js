@@ -1,11 +1,7 @@
-const cards = document.querySelectorAll('[data-platform]');
-const filters = document.querySelector('.filters');
-const releaseNote = document.querySelector('[data-release-note]');
 const releases = window.nasfilemReleases ?? {};
-let hasPublicRelease = false;
 
-for (const card of cards) {
-  const release = releases[card.dataset.platform];
+for (const row of document.querySelectorAll('[data-platform]')) {
+  const release = releases[row.dataset.platform];
   if (!release?.url || !release.label) continue;
 
   const link = document.createElement('a');
@@ -22,38 +18,49 @@ for (const card of cards) {
     link.replaceChildren(badge);
   }
 
-  const downloads = card.querySelector('[data-download]');
-  downloads.append(link);
+  const channel = row.querySelector('[data-download]');
+  channel.replaceChildren(link);
 
   if (release.details) {
     const metadata = document.createElement('span');
+    metadata.className = 'release-details';
     metadata.textContent = release.details;
-    downloads.append(metadata);
+    channel.append(metadata);
   }
 
-  const status = card.querySelector('[data-status]');
+  const status = row.querySelector('[data-status]');
   status.textContent = '已发布';
   status.classList.add('released');
-  hasPublicRelease = true;
 }
 
-if (hasPublicRelease) {
-  releaseNote.textContent = '各发行渠道的版本和可用地区可能不同。';
-}
+const pairing = document.querySelector('[data-pairing]');
 
-if (filters) {
-  filters.hidden = false;
+if (pairing) {
+  const steps = [
+    ['存储端选好「家庭资料」。共享目录默认只读。', '已选择目录', '尚未配对', '等待连接'],
+    ['访问端扫码或粘贴配对码。存储端核对设备并批准。', '已批准设备', '已配对', '等待打开目录'],
+    ['访问端打开「家庭资料」，只看得到已授权的内容。', '已开启共享', '家庭资料', '只读访问'],
+  ];
+  const controls = pairing.querySelector('.step-buttons');
+  const fields = [
+    pairing.querySelector('#pairing-state'),
+    pairing.querySelector('[data-host-status]'),
+    pairing.querySelector('[data-client-title]'),
+    pairing.querySelector('[data-client-status]'),
+  ];
 
-  filters.addEventListener('click', (event) => {
-    const selected = event.target.closest('button[data-filter]');
+  controls.hidden = false;
+  controls.addEventListener('click', (event) => {
+    const selected = event.target.closest('button[data-step]');
     if (!selected) return;
 
-    for (const option of filters.querySelectorAll('button')) {
-      option.setAttribute('aria-pressed', String(option === selected));
+    const stage = Number(selected.dataset.step);
+    for (const button of controls.querySelectorAll('button')) {
+      button.setAttribute('aria-pressed', String(button === selected));
     }
-
-    for (const card of cards) {
-      card.hidden = selected.dataset.filter !== 'all' && card.dataset.kind !== selected.dataset.filter;
+    for (const [index, field] of fields.entries()) {
+      field.textContent = steps[stage][index];
     }
+    pairing.classList.toggle('paired', stage > 0);
   });
 }
