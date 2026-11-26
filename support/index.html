@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="排查 NASFileM 的配对、连接和文件权限问题，或向项目提交反馈。">
+  <title>使用支持 · NASFileM</title>
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+<header class="site-header"><div class="shell header-inner">
+  <a class="wordmark" href="../" aria-label="NASFileM 首页">NASFileM<span aria-hidden="true">.</span></a>
+  <nav aria-label="主导航"><a href="../#features">功能</a><a href="../guide/">使用指南</a><a href="./" aria-current="page">支持</a></nav>
+  <a class="button small outline" href="../#download">下载</a>
+</div></header>
+<main class="shell prose" id="main">
+  <h1>使用支持</h1>
+  <p class="intro">查找配对、连接和文件权限问题的解决办法。</p>
+  <section>
+    <h2>排查连接和权限</h2>
+    <div class="faq-list">
+      <details><summary>配对时找不到存储端</summary><p>确认两台设备在同一个局域网，存储端已开始共享，客户端已获得系统要求的本地网络权限。重新打开二维码或复制配对码后再试。</p></details>
+      <details><summary>看得到文件，但不能上传</summary><p>请在存储端检查该设备的目录权限和「允许写入」设置。共享目录默认只读，电视端只提供浏览和媒体播放。</p></details>
+      <details><summary>Mac 休眠后为什么打不开文件？</summary><p>Mac 休眠、关机或共享磁盘未挂载时，访问会暂停。唤醒 Mac 并确认共享服务和共享磁盘正常，再在访问端刷新。</p></details>
+      <details><summary>切换网络后连不上</summary><p>回到存储端检查共享和跨网访问设置。先在同一网络连一次，再离开局域网重试。电视端在同一局域网内使用。</p></details>
+    </div>
+  </section>
+  <section>
+    <h2>反馈问题</h2>
+    <p>请提供设备型号、系统版本、NASFileM 版本和遇到问题的步骤。提交前，请移除截图和日志里的配对码、私有地址以及文件内容。GitHub 反馈是公开的。</p>
+    <div class="actions"><a class="button primary" href="https://github.com/Longdabo/nasfilem-site/issues/new">在 GitHub 反馈</a></div>
+  </section>
+</main>
+<footer class="site-footer"><div class="shell footer-inner">
+  <a class="wordmark" href="../" aria-label="NASFileM 首页">NASFileM<span aria-hidden="true">.</span></a>
+  <nav aria-label="页脚导航"><a href="../guide/">使用指南</a><a href="../privacy/">隐私说明</a></nav>
+</div></footer>
+</body>
+</html>
