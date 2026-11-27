@@ -24,5 +24,21 @@ window.beaverNasReleases = {
       "details": "1.0.0 · x64 · 119.9 MiB",
       "sha256": "d71d63f3bddad7506faad4a98d3c372091c99bec63664837eb9b6ee61159baa6"
     }
+  ],
+  "android": [
+    {
+      "label": "下载 APK",
+      "url": "https://github.com/Longdabo/nasfilem-site/releases/download/v1.0.0/BeaverNAS-Android.apk",
+      "details": "1.0.0 · 通用 APK · 236.9 MiB",
+      "sha256": "1a644ba8a47d16d185feac5e6579f489a876a13ee175b426991f4369760a90cf"
+    }
+  ],
+  "android-tv": [
+    {
+      "label": "下载 APK",
+      "url": "https://github.com/Longdabo/nasfilem-site/releases/download/v1.0.0/BeaverNAS-Android.apk",
+      "details": "1.0.0 · 通用 APK · 236.9 MiB",
+      "sha256": "1a644ba8a47d16d185feac5e6579f489a876a13ee175b426991f4369760a90cf"
+    }
   ]
 };
