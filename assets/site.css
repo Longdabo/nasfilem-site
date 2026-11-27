@@ -137,7 +137,10 @@ details p { padding: 0 .2rem .9rem; }
 .release-status { color: var(--blue-text); font-weight: 670; }
 .release-status.released { color: var(--accent); }
 .download-links .button, .download-links .store-badge { margin-top: .25rem; }
-.release-details { margin-top: .22rem; }
+.release-details { display: block; margin-top: .22rem; }
+.release-entry + .release-entry { margin-top: .65rem; }
+.release-entry summary { cursor: pointer; }
+.release-entry code { overflow-wrap: anywhere; }
 .store-badge { display: inline-block; max-width: 100%; }
 .store-badge img { width: auto; height: 2.5rem; object-fit: contain; }
 

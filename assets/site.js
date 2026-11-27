@@ -1,9 +1,6 @@
-const releases = window.nasfilemReleases ?? {};
-
-for (const row of document.querySelectorAll('[data-platform]')) {
-  const release = releases[row.dataset.platform];
-  if (!release?.url || !release.label) continue;
-
+function releaseEntry(release) {
+  const entry = document.createElement('div');
+  entry.className = 'release-entry';
   const link = document.createElement('a');
   link.className = 'button small primary';
   link.href = release.url;
@@ -18,15 +15,36 @@ for (const row of document.querySelectorAll('[data-platform]')) {
     link.replaceChildren(badge);
   }
 
-  const channel = row.querySelector('[data-download]');
-  channel.replaceChildren(link);
+  entry.append(link);
 
   if (release.details) {
     const metadata = document.createElement('span');
     metadata.className = 'release-details';
     metadata.textContent = release.details;
-    channel.append(metadata);
+    entry.append(metadata);
   }
+
+  if (release.sha256) {
+    const verification = document.createElement('details');
+    const summary = document.createElement('summary');
+    summary.textContent = '查看 SHA-256';
+    const hash = document.createElement('code');
+    hash.textContent = release.sha256;
+    verification.append(summary, hash);
+    entry.append(verification);
+  }
+
+  return entry;
+}
+
+const releases = window.beaverNasReleases ?? {};
+
+for (const row of document.querySelectorAll('[data-platform]')) {
+  const entries = releases[row.dataset.platform]?.filter(({ url, label }) => url && label);
+  if (!entries?.length) continue;
+
+  const channel = row.querySelector('[data-download]');
+  channel.replaceChildren(...entries.map(releaseEntry));
 
   const status = row.querySelector('[data-status]');
   status.textContent = '已发布';
