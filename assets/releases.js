@@ -40,5 +40,13 @@ window.beaverNasReleases = {
       "details": "1.0.0 · 通用 APK · 236.9 MiB",
       "sha256": "1a644ba8a47d16d185feac5e6579f489a876a13ee175b426991f4369760a90cf"
     }
+  ],
+  "windows": [
+    {
+      "label": "下载 EXE",
+      "url": "https://github.com/Longdabo/nasfilem-site/releases/download/v1.0.0/BeaverNAS-Windows-x64-Setup.exe",
+      "details": "1.0.0 · x64 · 53.7 MiB",
+      "sha256": "a488c4adad2b5cc41fdb2f05a4e1350b81efade094220d3d9c3bba18e9bbdd58"
+    }
   ]
 };
