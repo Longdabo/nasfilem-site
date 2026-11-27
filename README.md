@@ -6,7 +6,7 @@
 
 ## 发布客户端
 
-1. 在对应系统安装并验证候选包。Mac 官网版需要 Developer ID 签名和 Apple 公证，Android 官网版需要与正式发行渠道一致的应用签名。
+1. 在对应系统安装并验证候选包。Mac 官网版需要 Developer ID 签名和 Apple 公证，可提供带公证票据的应用 ZIP 或已签名和公证的 DMG。Android 官网版需要与正式发行渠道一致的应用签名。
 2. 在这个仓库创建带固定版本标签的 GitHub Release，先保存草稿。上传已验证的安装包，核对附件的 SHA-256 与本地产物相同，再发布 Release。同一版本可按平台补齐附件。修订已发布的安装包时，使用新的版本标签。
 3. 在 Release 公开后运行 `python3 scripts/add_release_assets.py v1.0.0 windows linux-deb`。按已发布的平台传参，可用键为 `mac`、`windows`、`linux-deb`、`linux-appimage`、`android`、`android-tv`。脚本匿名验证附件可访问，再填写固定版本的下载地址、架构、大小和 SHA-256。其他平台继续读取各自已发布的版本。
 4. 在 Pages 部署后检查 `/download/`，点开每个新增下载和 SHA-256，确认发行版、系统要求及下载入口一致。

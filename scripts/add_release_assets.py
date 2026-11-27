@@ -41,6 +41,8 @@ def main():
     download_root = f"https://github.com/{REPO}/releases/download/"
     for platform in dict.fromkeys(args.platform):
         name, label, arch = PLATFORMS[platform]
+        if platform == "mac" and name not in assets:
+            name, label = "BeaverNAS-macOS-AppleSilicon.zip", "下载 ZIP"
         url = f"{download_root}{tag}/{name}"
         asset = assets.get(name, {})
         digest = re.fullmatch(r"sha256:([a-f0-9]{64})", asset.get("digest") or "")
